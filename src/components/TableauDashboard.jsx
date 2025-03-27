@@ -53,7 +53,20 @@ export default function TableauDashboard({
 
             initViz();
 
+            const refreshId = setInterval(() => {
+                if (refViz.current) {
+                    try {
+                        // Example: Refresh dashboard data
+                        refViz.current.refreshDataAsync();
+                        console.log('Dashboard data refreshed');
+                    } catch (error) {
+                        console.error('Refresh failed:', error);
+                    }
+                }
+            }, 500000); // 30 seconds
+
             return function () {
+                clearInterval(refreshId);
                 if (refViz.current) {
                     refViz.current.dispose();
                     refViz.current = null;

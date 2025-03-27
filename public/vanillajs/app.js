@@ -11,6 +11,7 @@ const options = {
 let viz;
 
 function initViz() {
+    const { tableau } = window;
     viz = new tableau.Viz(containerDiv, url, options);
 }
 

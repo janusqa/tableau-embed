@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./javascriptv3.css" />
+        <title>Embedded Analytics with Tableau</title>
+    </head>
+    <body>
+        <!--
+        <button id="btn-hide">Hide viz</button>
+        <button id="btn-show">Show viz</button>
+        <button id="btn-pdf">Export as PDF</button>
+        <button id="btn-img">Export as Image</button>
+        <input type="number" id="min-value" placeholder="min value" />
+        <input type="number" id="max-value" placeholder="max value" />
+        <button id="btn-filter">Apply Filter</button>
+        -->
+        <div id="app">
+            <h1>Embedded Analytics with Tableau</h1>
+            <div id="viz">
+                <tableau-viz
+                    id="viz-container"
+                    src="https://public.tableau.com/views/LearnEmbeddedAnalytics/SalesOverviewDashboard"
+                    device="desktop"
+                >
+                    <viz-filter field="Region" value="Central" />
+                </tableau-viz>
+            </div>
+        </div>
+
+        <script
+            type="module"
+            src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+        ></script>
+        <script type="module" src="./appv3.js"></script>
+    </body>
+</html>
